@@ -4,7 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+/**
+ * 
+ * @author Chrystian Rocha
+ *
+ */
 @Entity
 public class CustomerEntity {
 
@@ -21,13 +25,6 @@ public class CustomerEntity {
     this.lastName = lastName;
   }
 
-  @Override
-  public String toString() {
-    return String.format(
-        "Customer[id=%d, firstName='%s', lastName='%s']",
-        id, firstName, lastName);
-  }
-
   public Long getId() {
     return id;
   }
@@ -39,4 +36,12 @@ public class CustomerEntity {
   public String getLastName() {
     return lastName;
   }
+
+  @Override
+  public String toString() {
+    return String.format(
+        "Customer[id=%d, firstName='%s', lastName='%s']",
+        id, firstName, lastName);
+  }
+
 }

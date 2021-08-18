@@ -1,5 +1,4 @@
 package com.example.AcessingData.repository;
-
 import org.springframework.data.repository.CrudRepository;
 
 import com.example.AcessingData.entity.CustomerEntity;

@@ -11,24 +11,39 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.AcessingData.entity.CustomerEntity;
 import com.example.AcessingData.repository.CustomerRepository;
-
+/**
+ * 
+ * @author Chrystian Rocha
+ *
+ */
 @RestController
 @RequestMapping("/api")
 public class CustomerRestController {
 
 	@Autowired
 	CustomerRepository repository;
-	
+	/**
+	 * 
+	 * @return a list of All Customer's
+	 */
 	@GetMapping(value = "/customers", produces = "application/json")
 	public Iterable<CustomerEntity> getAll(){
 		return repository.findAll();
 	}
 	
+	/**
+	 * 
+	 * @param id
+	 * @return a Customer by its id
+	 */
 	@GetMapping(value = "/customers/{id}", produces = "application/json")
 	public Optional<CustomerEntity> getbyId(@PathVariable Long id){
 		return repository.findById(id);
 	}
 	
+	/**
+	 * delete all Customer's
+	 */
 	@DeleteMapping(value = "/customers")
 	public void deleteAll() {
 		repository.deleteAll();
